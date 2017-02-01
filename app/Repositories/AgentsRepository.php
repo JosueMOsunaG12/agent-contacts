@@ -8,15 +8,15 @@ use Cache;
 class AgentsRepository
 {
     /**
-     * Method that allows to find all the ids of the agents.
+     * Method that allows to find all the agents.
      *
-     * @return Array of Agent Ids
+     * @return Illuminate\Support\Collection of agents
      */
-    public function findAllIds()
+    public function findAll()
     {
-    	// Remember the agent ids query for a week
-        return Cache::remember("agent:ids", 10080, function () {
-            return Agent::pluck('id');
+    	// Remember the agents query for a week
+        return Cache::remember('agents', 10080, function () {
+            return Agent::all();
         });
     }
 }
