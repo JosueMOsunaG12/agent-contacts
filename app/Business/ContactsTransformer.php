@@ -52,4 +52,22 @@ class ContactsTransformer
 
         return $contacts->all();
     }
+
+    /**
+     * Method that allows transform contacts to filter by agent
+     *
+     * @param Illuminate\Support\Collection $contacts Collection of contacts
+     * @param integer Agent Id to be filtered
+     * @return Illuminate\Support\Collection Collection of contacts filtered by 
+     *         Agent Id
+     */
+
+    public function filterByAgentId($contacts, $agentId)
+    {
+        $filteredContacts = collect($contacts)->filter(function ($contact, $key) use ($agentId) {
+            return $contact->agent == $agentId;
+        });
+
+        return $filteredContacts->all();
+    }
 }

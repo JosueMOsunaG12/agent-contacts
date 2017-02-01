@@ -24,11 +24,11 @@ class AgentsRequest extends FormRequest
      */
     public function rules()
     {
-        $agentIds = app(AgentsRepository::class)->findAllIds();
+        $agentIds = app(AgentsRepository::class)->findAll();
         $rules = [];
 
-        $agentIds->map(function ($agentId) use (&$rules) {
-            $rules["agent{$agentId}_zipcode"] = 'required|digits:5';
+        $agentIds->map(function ($agent) use (&$rules) {
+            $rules["agent{$agent->id}_zipcode"] = 'required|digits:5';
         });
 
         return $rules;
