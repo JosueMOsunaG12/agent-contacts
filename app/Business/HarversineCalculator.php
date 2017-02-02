@@ -5,7 +5,7 @@ namespace App\Business;
 class HarversineCalculator
 {
     /**
-     * Method that allows get distance between two coordinates 
+     * Method that allows get distance between two coordinates
      * using harversine formula.
      *
      * @param float $latitude1 Latitude of first coordinate

@@ -14,7 +14,7 @@ class AgentsRepository
      */
     public function findAll()
     {
-    	// Remember the agents query for a week
+        // Remember the agents query for a week
         return Cache::remember('agents', 10080, function () {
             return Agent::all();
         });

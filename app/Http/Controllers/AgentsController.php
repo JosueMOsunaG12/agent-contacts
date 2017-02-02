@@ -31,13 +31,13 @@ class AgentsController extends Controller
     /**
      * Method that allows show index for agent contacts.
      *
-     * @return 
+     * @return
      */
     public function index()
     {
         $agents = $this->agentsRepository->findAll();
 
-        return view('agent-contacts')->with(compact('agents', 'contactsAgent1', 'contactsAgent2'));
+        return view('agent-contacts')->with(compact('agents'));
     }
 
 

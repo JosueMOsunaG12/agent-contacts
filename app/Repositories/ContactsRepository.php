@@ -14,7 +14,7 @@ class ContactsRepository
      */
     public function findAll()
     {
-    	// Remember the contacts query for a week
+        // Remember the contacts query for a week
         return Cache::remember("contacts", 10080, function () {
             return Contact::all();
         });

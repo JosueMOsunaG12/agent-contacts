@@ -21,8 +21,32 @@ To develop this project we designed a data model that contains three main classe
 - Zipcodes, which contains the Id (the number corresponding to the zipcode), lat (its latitude) and lng (its longitude).
 - Contacts, which conforms to the following attributes: Id, Name and Zipcode.
 
-The only existing relationship in database it's found between Zipcodes and Contacts through the Zipcode field that is in Contacts
+The only existing relationship in database it's found between Zipcodes and Contacts through the Zipcode field that is in Contacts.
+
+## Application Structure
+
+In the application layer of this project you can divide the logic into the following parts.
+
+- Controllers:
+    - AgentsController, the controller that receives the user's requests, is responsible for orchestrating all the logic to respond to the user correctly.
+- Business:
+    - AggentsMapper, is in charge of mapping the input of the agents to obtain a data structure its latitude and corresponding length.
+    - ContactsTransformer, responsible for performing all necessary transformations in the contact list to obtain the information of contacts divided by agents.
+    - HarvesineCalculator, is in charge to perform the calculations necessary to obtain the distances between two points with their latitude and longitude.
+- Repositories: are in charge of preparing the information of the models to be used by the rest of the logic of the application, there is one for each model.
+- Models: are used to receive or send the information to the database, there is one for each database table.
+
+## User interface
+
+It consists of a main view with:
+
+- 2 inputs for typing the zip codes for the 2 agents (Agent 1 and Agent 2). 
+- A button labeled “MATCH” to trigger the algorithm.
+- A table pair with 3 columns (AgentId, Contact Name, Contact Zip Code) with the contacts assigned to each agent.
+
+It was developed in laravel templates, also, a bootstrap template was added to accelerate development.
 
 ## Third party tools
 
 - The [wilgucki/csv](https://github.com/wilgucki/csv) package was used to insert the csv in the database through the model.
+- The [laravelcollective/html](https://laravelcollective.com/) package was used to create the forms in html.
