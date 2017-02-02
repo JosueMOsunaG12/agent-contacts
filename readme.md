@@ -50,3 +50,11 @@ It was developed in laravel templates, also, a bootstrap template was added to a
 
 - The [wilgucki/csv](https://github.com/wilgucki/csv) package was used to insert the csv in the database through the model.
 - The [laravelcollective/html](https://laravelcollective.com/) package was used to create the forms in html.
+
+## Installation and usage
+
+1. Download this repository
+
+2. Run the command `composer install`
+
+3. Run the command `php artisan serve`
