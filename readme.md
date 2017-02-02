@@ -55,6 +55,8 @@ It was developed in laravel templates, also, a bootstrap template was added to a
 
 1. Download this repository
 
-2. Run the command `composer install`
+2. Configure your **postgres** database (if you do not use the default values for homestead, copy the .env.example to your .env with your environment variables for the database)
 
-3. Run the command `php artisan serve`
+3. Run the command `composer install`
+
+4. Run the command `php artisan serve`
