@@ -60,3 +60,10 @@ It was developed in laravel templates, also, a bootstrap template was added to a
 3. Run the command `composer install`
 
 4. Run the command `php artisan serve`
+
+## Improvements Pendings
+
+- Add functional tests
+- Provide mechanism to load the contacts csv.
+- Add in the main view the diagram with the locations of the contacts, painting from one color those belonging to "Agent 1" and another color those belonging to "Agent 2"
+- Develop functionality to be able to add agents in my main view and also eliminate to look for the best distribution of calls for quantity of variable agents.
